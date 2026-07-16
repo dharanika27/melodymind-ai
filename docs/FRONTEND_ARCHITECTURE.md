@@ -35,31 +35,46 @@
 
 ## Folder Structure
 
+# Folder Structure
+
 frontend/
+│
+├── public/
+│ ├── logo.svg
+│ └── favicon.svg
 │
 ├── src/
 │ ├── assets/
 │ ├── components/
 │ │ ├── common/
+│ │ ├── layout/
+│ │ │ ├── Header.tsx
+│ │ │ ├── MainLayout.tsx
+│ │ │ └── Sidebar.tsx
 │ │ ├── chat/
 │ │ ├── playlist/
-│ │ ├── player/
-│ │ └── sidebar/
-│ │
-│ ├── pages/
-│ │ ├── Home/
-│ │ ├── Chat/
-│ │ ├── Playlist/
-│ │ └── Settings/
+│ │ └── player/
 │ │
 │ ├── hooks/
+│ ├── lib/
+│ │ └── navigation.ts
+│ │
+│ ├── pages/
+│ │ ├── Dashboard/
+│ │ ├── Chat/
+│ │ ├── Playlists/
+│ │ ├── Favorites/
+│ │ ├── History/
+│ │ └── Settings/
+│ │
+│ ├── routes/
 │ ├── services/
 │ ├── store/
-│ ├── utils/
-│ ├── layouts/
-│ ├── routes/
-│ ├── types/
+│ │ └── sidebarStore.ts
+│ │
 │ ├── styles/
+│ ├── types/
+│ ├── utils/
 │ ├── App.tsx
 │ └── main.tsx
 
@@ -77,13 +92,32 @@ frontend/
 
 ## Components
 
+### Layout
+
 - Sidebar
 - Header
-- Chat Window
-- Chat Input
-- Playlist Panel
-- Song Card
-- Music Player
-- Recommendation Card
-- Loading Spinner
-- Theme Toggle
+- MainLayout
+
+### Dashboard
+
+- Quick Action Cards (Upcoming)
+- Recommendation Cards (Upcoming)
+
+### Chat
+
+- Chat Window (Upcoming)
+- Chat Input (Upcoming)
+
+### Playlist
+
+- Playlist Panel (Upcoming)
+- Song Card (Upcoming)
+
+### Player
+
+- Music Player (Upcoming)
+
+### Common
+
+- Theme Toggle (Upcoming)
+- Loading Spinner (Upcoming)
