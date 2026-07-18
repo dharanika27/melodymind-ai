@@ -1,37 +1,59 @@
+import { MessageSquare, ListMusic, Heart, Music4 } from "lucide-react";
+
+import SectionTitle from "../../components/dashboard/SectionTitle";
+import QuickActionCard from "../../components/dashboard/QuickAction";
+
 export default function Dashboard() {
   return (
-    <div>
-      <h1 className="text-5xl font-bold">Dashboard</h1>
+    <div className="space-y-12">
+      {/* Welcome */}
 
-      <p className="mt-2 text-slate-400">
-        Welcome back! Discover your music with AI.
-      </p>
+      <div>
+        <h1 className="text-5xl font-bold">Dashboard</h1>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div className="rounded-3xl bg-slate-900 p-8">
-          <h3 className="text-xl font-semibold">AI Chat</h3>
-
-          <p className="mt-3 text-slate-400">Ask MelodyMind anything.</p>
-        </div>
-
-        <div className="rounded-3xl bg-slate-900 p-8">
-          <h3 className="text-xl font-semibold">Playlists</h3>
-
-          <p className="mt-3 text-slate-400">Your generated playlists.</p>
-        </div>
-
-        <div className="rounded-3xl bg-slate-900 p-8">
-          <h3 className="text-xl font-semibold">Favorites</h3>
-
-          <p className="mt-3 text-slate-400">Songs you love.</p>
-        </div>
-
-        <div className="rounded-3xl bg-slate-900 p-8">
-          <h3 className="text-xl font-semibold">History</h3>
-
-          <p className="mt-3 text-slate-400">Previous AI searches.</p>
-        </div>
+        <p className="mt-2 text-lg text-slate-400">
+          Welcome back! Discover your music with AI.
+        </p>
       </div>
+
+      {/* Quick Actions */}
+
+      <section>
+        <SectionTitle
+          title="Quick Actions"
+          subtitle="Jump directly into your favorite features."
+        />
+
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <QuickActionCard
+            title="AI Chat"
+            description="Ask MelodyMind anything."
+            icon={MessageSquare}
+            route="/chat"
+          />
+
+          <QuickActionCard
+            title="Playlists"
+            description="Create AI playlists."
+            icon={ListMusic}
+            route="/playlists"
+          />
+
+          <QuickActionCard
+            title="Favorites"
+            description="Your liked songs."
+            icon={Heart}
+            route="/favorites"
+          />
+
+          <QuickActionCard
+            title="Mood Music"
+            description="Generate music by mood."
+            icon={Music4}
+            route="/chat"
+          />
+        </div>
+      </section>
     </div>
   );
 }
