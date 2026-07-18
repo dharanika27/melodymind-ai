@@ -168,27 +168,12 @@ Future AI Layer
 
 ---
 
-# Next Task
+## Task 2.8 – Database Foundation
 
-**Task 2.8 – Database Foundation**
+### Completed
 
-We will implement:
-
-- SQLAlchemy 2.0
-- Alembic
-- SQLite (Development)
-- PostgreSQL (Production)
-- User Model
-- Playlist Model
-- Favorites Model
-- History Model
-
----
-
-# Sprint Completion
-
-**Progress:** 90%
-
-Estimated Version:
-
-**v0.4.0 – Backend Foundation**
+- ✅ SQLAlchemy configured
+- ✅ Database session
+- ✅ Declarative Base
+- ✅ User model
+- ✅ SQLite database initialized

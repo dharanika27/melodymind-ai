@@ -7,6 +7,11 @@ from app.middleware.request_logger import RequestLoggerMiddleware
 from app.exceptions.custom_exceptions import MelodyMindException
 from app.exceptions.handlers import melodymind_exception_handler
 
+from app.db.base import Base
+from app.db.session import engine
+
+Base.metadata.create_all(bind=engine)
+
 app = FastAPI(
     title=settings.APP_NAME,
     version=settings.APP_VERSION,
