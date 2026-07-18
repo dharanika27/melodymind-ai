@@ -1,4 +1,4 @@
-import { Play, Pause, SkipBack, SkipForward, Volume2 } from "lucide-react";
+import { Play, SkipBack, SkipForward, Volume2 } from "lucide-react";
 
 export default function MusicPlayer() {
   return (
