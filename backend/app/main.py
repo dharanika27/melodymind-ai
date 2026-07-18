@@ -1,18 +1,18 @@
 from fastapi import FastAPI
 
+from app.core.config import settings
+
 app = FastAPI(
-    title="MelodyMind AI",
-    version="1.0.0"
+    title=settings.APP_NAME,
+    version=settings.APP_VERSION,
 )
 
-@app.get("/")
-def home():
-    return {
-        "message": "Welcome to MelodyMind AI 🎵"
-    }
 
-@app.get("/health")
-def health():
+@app.get("/")
+def root():
     return {
-        "status": "healthy"
+        "application": settings.APP_NAME,
+        "version": settings.APP_VERSION,
+        "environment": settings.ENVIRONMENT,
+        "status": "running",
     }
