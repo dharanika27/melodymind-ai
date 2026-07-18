@@ -35,3 +35,13 @@ Build a scalable FastAPI backend that serves as the foundation for AI agents, Yo
 - ✅ Chat Endpoint (Placeholder)
 - ✅ Playlist Endpoint (Placeholder)
 - ✅ YouTube Endpoint (Placeholder)
+
+## Task 2.4 – Logging & Exception Handling
+
+### Completed
+
+- ✅ Centralized Logger
+- ✅ Request Logging Middleware
+- ✅ Custom Exception Class
+- ✅ Global Exception Handler
+- ✅ Log File Generation

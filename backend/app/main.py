@@ -2,6 +2,10 @@ from fastapi import FastAPI
 
 from app.core.config import settings
 from app.api.v1.router import api_router
+from app.core.logging import logger
+from app.middleware.request_logger import RequestLoggerMiddleware
+from app.exceptions.custom_exceptions import MelodyMindException
+from app.exceptions.handlers import melodymind_exception_handler
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -19,3 +23,12 @@ def root():
         "environment": settings.ENVIRONMENT,
         "status": "running",
     }
+
+app.add_middleware(RequestLoggerMiddleware)
+
+app.add_exception_handler(
+    MelodyMindException,
+    melodymind_exception_handler,
+)
+
+logger.info("MelodyMind AI Backend Started")
