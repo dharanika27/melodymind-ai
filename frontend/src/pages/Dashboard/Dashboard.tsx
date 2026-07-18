@@ -2,12 +2,14 @@ import { MessageSquare, ListMusic, Heart, Music4 } from "lucide-react";
 
 import SectionTitle from "../../components/dashboard/SectionTitle";
 import QuickActionCard from "../../components/dashboard/QuickAction";
+import TrendingSongs from "../../components/dashboard/TrendingSongs";
+import ContinueListening from "../../components/dashboard/ContinueListening";
+import RecentActivity from "../../components/dashboard/RecentActivity";
 
 export default function Dashboard() {
   return (
     <div className="space-y-12">
       {/* Welcome */}
-
       <div>
         <h1 className="text-5xl font-bold">Dashboard</h1>
 
@@ -17,7 +19,6 @@ export default function Dashboard() {
       </div>
 
       {/* Quick Actions */}
-
       <section>
         <SectionTitle
           title="Quick Actions"
@@ -54,6 +55,15 @@ export default function Dashboard() {
           />
         </div>
       </section>
+
+      {/* Trending + Continue Listening */}
+      <div className="grid gap-8 xl:grid-cols-2">
+        <TrendingSongs />
+        <ContinueListening />
+      </div>
+
+      {/* Recent Activity */}
+      <RecentActivity />
     </div>
   );
 }
