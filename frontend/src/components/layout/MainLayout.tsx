@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { useSidebarStore } from "../../store/sidebarStore";
+import MusicPlayer from "../player/MusicPlayer";
 
 export default function MainLayout() {
   const { collapsed } = useSidebarStore();
@@ -21,9 +22,10 @@ export default function MainLayout() {
         >
           <Header />
 
-          <main className="p-6 md:p-8 lg:p-10">
+          <main className="p-6 md:p-8 lg:p-10 pb-28">
             <Outlet />
           </main>
+          <MusicPlayer />
         </div>
       </div>
     </div>
