@@ -45,3 +45,16 @@ Build a scalable FastAPI backend that serves as the foundation for AI agents, Yo
 - ✅ Custom Exception Class
 - ✅ Global Exception Handler
 - ✅ Log File Generation
+
+## Task 2.5 – Pydantic Schemas
+
+### Completed
+
+- ✅ Common API Response Model
+- ✅ Chat Request Schema
+- ✅ Chat Response Schema
+- ✅ Playlist Request Schema
+- ✅ Playlist Response Schema
+- ✅ YouTube Search Schema
+- ✅ User Preference Schema
+- ✅ Swagger Validation
