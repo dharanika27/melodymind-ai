@@ -4,10 +4,15 @@ from app.schemas.playlist import (
     PlaylistRequest,
     PlaylistResponse,
 )
+from fastapi import APIRouter, Depends
 
-router = APIRouter(prefix="/playlists", tags=["Playlists"])
+from app.api.dependencies import get_playlist_service
+from app.services.playlist_service import PlaylistService
 
-DEFAULT_PLAYLIST_SIZE = 20
+router = APIRouter(
+    prefix="/playlists",
+    tags=["Playlists"]
+)
 
 
 @router.get("/")
@@ -18,8 +23,10 @@ def playlists():
 
 
 @router.post("/generate", response_model=PlaylistResponse)
-def generate_playlist(request: PlaylistRequest):
-    return PlaylistResponse(
-        playlist_name=f"{request.mood} Playlist",
-        total_songs=DEFAULT_PLAYLIST_SIZE,
+def generate_playlist(
+    playlist_request: PlaylistRequest,
+    playlist_service: PlaylistService = Depends(get_playlist_service),
+):
+    return playlist_service.generate_playlist(
+        playlist_request.mood
     )

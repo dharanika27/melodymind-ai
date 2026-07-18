@@ -1,8 +1,15 @@
 from fastapi import APIRouter
 
 from app.schemas.chat import ChatRequest, ChatResponse
+from fastapi import Depends
 
-router = APIRouter(prefix="/chat", tags=["Chat"])
+from app.api.dependencies import get_chat_service
+from app.services.chat_service import ChatService
+
+router = APIRouter(
+    prefix="/chat",
+    tags=["Chat"]
+)
 
 
 @router.get("/")
@@ -13,7 +20,10 @@ def chat_home():
 
 
 @router.post("/", response_model=ChatResponse)
-def chat(request: ChatRequest):
-    return ChatResponse(
-        response=f"You said: {request.message}"
+def chat(
+    chat_request: ChatRequest,
+    chat_service: ChatService = Depends(get_chat_service),
+):
+    return chat_service.process_message(
+        chat_request.message
     )
