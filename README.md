@@ -142,3 +142,5 @@ Build an intelligent AI-powered music assistant capable of understanding natural
 ## 📄 License
 
 This project is intended for educational and portfolio purposes. MelodyMind AI uses official APIs and does not host or distribute copyrighted music.
+
+<!-- uvicorn app.main:app --reload -->
